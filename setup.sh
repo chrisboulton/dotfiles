@@ -19,8 +19,10 @@ if [ -f "/etc/os-release" ]; then
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
 
-    echo "Changing shell to zsh..."
-    chsh -s $(which zsh)
+    if [ "$SHELL" != "$(which zsh)" ]; then
+        echo "Changing shell to zsh..."
+        chsh -s $(which zsh)
+    fi
 fi
 
 stow -d $source -t $target --ignore=setup.sh -v .
