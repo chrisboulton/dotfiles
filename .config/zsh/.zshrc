@@ -32,9 +32,11 @@ export ZSH_COMPDUMP="$HOME/.cache/zsh/zcompdump-$HOST"
 plugins=(
   git
 )
-eval "$(/opt/homebrew/bin/brew shellenv)"
-source $ZSH/oh-my-zsh.sh
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+[ -d /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+[ -f "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
+[ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 bindkey '^[[A' history-substring-search-up
@@ -116,6 +118,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
+[ -f "$HOME/.vite-plus/env" ] && source "$HOME/.vite-plus/env"
 
 eval "$(starship init zsh)"
