@@ -4,6 +4,15 @@ target=$HOME
 source="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 mkdir -p $target/.ssh $target/.config $target/.agents $target/.cache/zsh
 
+# if linux
+if [ -f "/etc/os-release" ]; then
+    echo "Installing dependencies for Linux..."
+    sudo apt install starship zsh
+
+    echo "Changing shell to zsh..."
+    chsh -s $(which zsh)
+fi
+
 stow -d $source -t $target --ignore=setup.sh -v .
 
 if [ -d "$source/../dotfiles-private" ]; then
