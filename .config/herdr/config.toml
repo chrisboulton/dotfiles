@@ -1,0 +1,51 @@
+onboarding = false
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+agent_panel_sort = "spaces"
+
+[[keys.command]]
+key = "prefix+shift+p"
+type = "plugin_action"
+command = "projectmanager.projects"
+description = "Project Manager: Projects"
+
+[[keys.command]]
+key = "prefix+shift+o"
+type = "plugin_action"
+command = "projectmanager.new-project"
+description = "Project Manager: New Project"
+
+[[keys.command]]
+key = "f6"
+type = "plugin_action"
+command = "projectmanager.start-current"
+description = "Project Manager: Start Current"
+
+[[keys.command]]
+key = "f7"
+type = "plugin_action"
+command = "projectmanager.stop-current"
+description = "Project Manager: Stop Current"
+
+[[keys.command]]
+key = "f8"
+type = "plugin_action"
+command = "projectmanager.restart-current"
+description = "Project Manager: Restart Current"
+
+[[keys.command]]
+key = "f9"
+type = "plugin_action"
+command = "projectmanager.status-current"
+description = "Project Manager: Status Current"
+
+[theme]
+name = "catppuccin"
+
+[ui.toast]
+delivery = "herdr"
+
+[experimental]
+pane_history = false

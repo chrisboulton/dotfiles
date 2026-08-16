@@ -1,0 +1,74 @@
+[core]
+	excludesfile = ~/.config/git/ignore
+
+[color]
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
+	spull = !git-svn fetch && git-svn rebase
+	spush = !git-svn dcommit
+	lc = log ORIG_HEAD.. --stat --no-merges
+	undo = reset --hard
+	changes = diff --name-status -r
+    diffstat = diff --stat -r
+
+[user]
+	email = chris@chrisboulton.com
+	name = Chris Boulton
+
+[difftool]
+	prompt = false
+
+[push]
+	default = matching
+
+[hub]
+  protocol = https
+
+[mergetool]
+	keepBackup = true
+
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+
+[commit]
+	#gpgSign = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+
+[branch]
+	sort = -committerdate
+
+[merge]
+	tool = kdiff3

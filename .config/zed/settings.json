@@ -1,0 +1,137 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "ssh_connections": [
+    {
+      "host": "gx10.local",
+      "username": "chris",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/chris/.t3/worktrees/mixlayer/t3code-697d309b"
+          ]
+        },
+        {
+          "paths": [
+            "/home/chris/mixlayer"
+          ]
+        }
+      ]
+    }
+  ],
+  "ui_font_weight": 400.0,
+  "ui_font_family": ".SystemUIFont",
+  "cli_default_open_behavior": "new_window",
+  "edit_predictions": {
+    "open_ai_compatible_api": {
+      "api_url": "",
+      "model": "",
+    },
+    "allow_data_collection": "no",
+  },
+  "buffer_line_height": {
+    "custom": 1.7999999523162842,
+  },
+  "buffer_font_weight": 350.0,
+  "terminal": {
+    "font_size": 13.0,
+  },
+  "agent_servers": {
+    "pi-acp": {
+      "type": "registry",
+    },
+    "codex-acp": {
+      "type": "registry",
+    },
+    "claude-acp": {
+      "type": "registry",
+    },
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "right",
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "proxy": "",
+  "base_keymap": "VSCode",
+  "agent": {
+    "dock": "right",
+    "enabled": true,
+    "button": true,
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "preview_tabs": {
+    "enable_preview_from_file_finder": false,
+  },
+  "search": {
+    "include_ignored": false,
+  },
+  "minimap": {
+    "show": "never",
+  },
+  "current_line_highlight": "gutter",
+  "cursor_shape": "bar",
+  "use_system_window_tabs": true,
+  "when_closing_with_no_tabs": "close_window",
+  "buffer_font_fallbacks": ["Source Code Pro", "Monaco"],
+  "buffer_font_family": "Cascadia Mono NF",
+  "file_types": {
+    "terraform": ["*.tf"],
+  },
+  "auto_indent_on_paste": true,
+  "show_whitespaces": "none",
+  "show_edit_predictions": true,
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": true,
+  "hard_tabs": false,
+  "tab_size": 2,
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Catppuccin Macchiato",
+    "dark": "Catppuccin Macchiato"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha",
+  },
+  "language_models": {
+    "openai_compatible": {
+      "mixlayer": {
+        "api_url": "https://models.mixlayer.ai/v1",
+        "available_models": [
+          {
+            "name": "moonshotai/kimi-k2.7-code",
+            "display_name": "moonshotai/kimi-k2.7-code",
+            "max_tokens": 262144,
+          },
+          {
+            "name": "qwen/qwen3.5-397b-a17b",
+            "display_name": "qwen/qwen3.5-397b-a17b",
+            "max_tokens": 131072,
+          },
+          {
+            "name": "qwen/qwen3.6-27b",
+            "display_name": "qwen/qwen3.6-27b",
+            "max_tokens": 131072,
+          },
+        ],
+      },
+    },
+  },
+}
