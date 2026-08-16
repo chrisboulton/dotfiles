@@ -107,7 +107,9 @@ done
 
 [[ -s "${HOME}/.config/op/plugins.sh" ]] && source ${HOME}/.config/op/plugins.sh
 
-alias ls='eza --group-directories-first --icons'
+if which eza > /dev/null; then
+  alias ls='eza --group-directories-first --icons'
+fi
 # alias ls='ls -Fa'
 
 # bun completions

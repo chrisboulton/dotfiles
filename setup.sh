@@ -7,7 +7,17 @@ mkdir -p $target/.ssh $target/.config $target/.agents $target/.cache/zsh
 # if linux
 if [ -f "/etc/os-release" ]; then
     echo "Installing dependencies for Linux..."
-    sudo apt install starship zsh
+    sudo apt install -y zsh
+
+    if [ ! -f /usr/local/bin/starship ]; then
+      echo "Installing starship..."
+      curl -sS https://starship.rs/install.sh | sh
+    fi
+
+    if [ ! -d "$target/.oh-my-zsh" ]; then
+        echo "Installing oh-my-zsh..."
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    fi
 
     echo "Changing shell to zsh..."
     chsh -s $(which zsh)
