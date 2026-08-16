@@ -7,7 +7,7 @@ mkdir -p $target/.ssh $target/.config $target/.agents $target/.cache/zsh
 stow -d $source -t $target --ignore=setup.sh -v .
 
 if [ -d "$source/../dotfiles-private" ]; then
-    stow -d $source/.. -t $target -v dotfiles-private
+    stow -d $source/../dotfiles-private -t $target -v .
 fi
 
 # configure zsh to use XDG layout
