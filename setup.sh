@@ -11,7 +11,7 @@ if [ -d "$source/../dotfiles-private" ]; then
 fi
 
 # configure zsh to use XDG layout
-ln -fs $source/dotfiles/.config/zsh/.zshenv $target/.zshenv
+ln -fs $source/.config/zsh/.zshenv $target/.zshenv
 
 chmod 0700 $target/.ssh
 chmod 0600 $target/.ssh/id*
