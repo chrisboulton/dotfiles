@@ -35,7 +35,7 @@ plugins=(
 
 [ -d /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 [ -f "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
-[ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[ -f "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
@@ -114,6 +114,8 @@ fi
 
 # bun completions
 [ -s "~/.bun/_bun" ] && source "~/chris/.bun/_bun"
+
+[ -d "$HOME/.cargo/" ] && source "$HOME/.cargo/env"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
