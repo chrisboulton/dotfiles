@@ -117,7 +117,7 @@ fi
 # bun completions
 [ -s "~/.bun/_bun" ] && source "~/chris/.bun/_bun"
 
-[ -d "$HOME/.cargo/" ] && source "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
