@@ -1,4 +1,7 @@
-export PATH="./bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+# there's some bug or problem with sscache where ./bin first does not work
+# and complains about missing gcc. bin first is probably bad anyway?
+# export PATH="./bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH:./bin"
 export PATH=$PATH:$HOME/go/bin
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -110,7 +113,6 @@ done
 if which eza > /dev/null; then
   alias ls='eza --group-directories-first --icons'
 fi
-# alias ls='ls -Fa'
 
 # bun completions
 [ -s "~/.bun/_bun" ] && source "~/chris/.bun/_bun"
