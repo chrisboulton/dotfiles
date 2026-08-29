@@ -1,0 +1,76 @@
+schema_version = 6
+
+[app_settings]
+launch_at_login = true
+check_for_updates = true
+auto_install_updates = true
+update_prompt_seen = true
+show_in_menu_bar = true
+capture_mouse_events = true
+auto_download_assets = true
+asset_source = "automatic"
+thumbwheel_sensitivity = 14
+appearance = "system"
+app_icon = "openlogi"
+smooth_scroll = false
+vertical_scroll_sensitivity = 14
+ui_scale = "normal"
+device_view_mode = "grid"
+
+[devices]
+
+[devices."serial:2543apajjqr8"]
+scroll_resolution = "high"
+
+[devices."serial:2543apajjqr8".identity]
+display_name = "MX Master 4"
+codename = "MX Master 4 for Mac"
+kind = "mouse"
+
+[devices."serial:2543apajjqr8".identity.model_info]
+entity_count = 4
+unit_id = [
+    0,
+    0,
+    0,
+    0,
+]
+model_ids = [
+    45122,
+    0,
+    0,
+]
+extended_model_id = 4
+
+[devices."serial:2543apajjqr8".identity.model_info.transports]
+usb = false
+equad = false
+btle = true
+bluetooth = false
+
+[devices."serial:2543apajjqr8".identity.capabilities]
+buttons = true
+pointer = true
+lighting = false
+scroll_inversion = true
+hires_wheel = true
+thumbwheel = true
+haptic_feedback = true
+haptic_panel = true
+
+[devices."serial:2543apajjqr8".smartshift]
+mode = "free"
+auto_disengage = 16
+tunable_torque = 50
+
+[keyboard]
+
+[devices."serial:2543apajjqr8".links."direct:046d:b042".capabilities]
+buttons = true
+pointer = true
+lighting = false
+scroll_inversion = true
+hires_wheel = true
+thumbwheel = true
+haptic_feedback = true
+haptic_panel = true
