@@ -3,6 +3,7 @@ $directory\
 $git_branch\
 $git_status\
 $git_state\
+$python\
 $character"""
 add_newline = false
 
@@ -37,6 +38,9 @@ stashed = ""
 style = "fg:10"
 format = " [($state)]($style)"
 
+[python]
+format = " via [$symbol$pyenv_prefix$version( \\($virtualenv\\))]($style)"
+
 [character]
-success_symbol = "[ \\$ ](white)"
-error_symbol = "[ \\$ ](fg:9)"
+success_symbol = "[ \\$](white)"
+error_symbol = "[ \\$](fg:9)"
