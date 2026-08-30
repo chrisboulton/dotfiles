@@ -9,7 +9,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
-export TERM="xterm-256color"
+[[ "$TERM" == "xterm-ghostty" ]] || export TERM="xterm-256color"
 export CLICOLOR=1
 
 ZSH_THEME="robbyrussell"
