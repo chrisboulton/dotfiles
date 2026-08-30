@@ -1,0 +1,4 @@
+theme = catppuccin-mocha
+word-diff = true
+line-numbers = true
+exit-code-on-annotations = true
