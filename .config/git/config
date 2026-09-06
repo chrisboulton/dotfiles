@@ -35,6 +35,9 @@
 	changes = diff --name-status -r
     diffstat = diff --stat -r
 
+[init]
+  defaultBranch = main
+
 [user]
 	email = chris@chrisboulton.com
 	name = Chris Boulton
@@ -42,8 +45,16 @@
 [difftool]
 	prompt = false
 
+[pull]
+  rebase = true
+
 [push]
 	default = matching
+
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
 
 [hub]
   protocol = https
@@ -56,6 +67,7 @@
 	smudge = git-media-smudge %f
 
 [commit]
+  verbose = true
 	#gpgSign = true
 
 [filter "lfs"]
@@ -69,3 +81,7 @@
 
 [merge]
 	tool = kdiff3
+
+[rerere]
+  enabled = true
+  autoupdate = true
