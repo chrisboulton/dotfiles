@@ -4,7 +4,7 @@ Personal shell and application configuration, managed by [GNU Stow](https://www.
 
 ## Setup
 
-Install Git and GNU Stow, then clone and run the setup script:
+Install Git, then clone and run the setup script. On macOS, also install GNU Stow first (`brew install stow`):
 
 ```sh
 git clone git@github.com:chrisboulton/dotfiles.git
@@ -12,7 +12,13 @@ cd dotfiles
 ./setup.sh
 ```
 
-On Linux, the script also installs Zsh, Starship, and Oh My Zsh when needed. On macOS, install any missing dependencies first (for example, `brew install stow`).
+Supported systems:
+
+- **Ubuntu and Debian:** installs Zsh and GNU Stow using `apt`, plus Starship and Oh My Zsh when needed, and selects Zsh as the login shell.
+- **Omarchy (based on Arch):** installs Zsh and GNU Stow using `pacman`, plus Starship and Oh My Zsh when needed, while preserving the current login shell. Run `zsh` manually to use it.
+- **macOS:** install any missing dependencies first (for example, `brew install stow`).
+
+Other Linux distributions are rejected before installation.
 
 The script links this repository's files into `$HOME`, creates the required config directories, and configures Zsh to use `.config/zsh/.zshenv`.
 
@@ -33,5 +39,4 @@ Public configuration can reference private files that the private repository sup
 ## Todo
 
 * Add macOS packages (brew), apps, system preferences
-* Separate out Linux into Debian systems, Omarchy, etc
 * Add in Omarchy configuration
