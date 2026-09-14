@@ -127,3 +127,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -f "$HOME/.vite-plus/env" ] && source "$HOME/.vite-plus/env"
 
 eval "$(starship init zsh)"
+
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
