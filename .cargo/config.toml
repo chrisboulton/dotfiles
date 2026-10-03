@@ -1,2 +1,8 @@
 [build]
+rustc-wrapper = "kache"
 build-dir = ".cache/cargo"
+
+[env]
+HOST_CC = "kache cc"
+HOST_CXX = "kache c++"
+CC_KNOWN_WRAPPER_CUSTOM = "kache"
