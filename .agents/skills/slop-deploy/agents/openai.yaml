@@ -1,0 +1,3 @@
+interface:
+  display_name: "Slop Deploy"
+  short_description: "Deploy static prototypes to your slop domain"
