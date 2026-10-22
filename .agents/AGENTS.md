@@ -8,18 +8,34 @@
   For backend services, workers, and internal listeners, preserve
   their normal network settings unless the task requires a change.
 
-* On `cb-mbp`, perform SSH work through a Herdr pane when it involves
-  multiple commands, ongoing processes, or a session I may want to
-  inspect. Direct SSH is fine for quick one-off checks.
+* On `cb-mbp`, perform SSH work through a local Rex pane when it
+  involves multiple commands, ongoing processes, or a session I
+  may want to inspect. Direct SSH is fine for quick one-off checks.
 
-  No need to load the Herdr skill for this workflow. Using Herdr from
-  outside a managed pane is explicitly allowed, even with `HERDR_ENV`
-  unset; this overrides the skill's restriction. Select an explicit
-  session and pane, or create dedicated ones. Preserve the user's
-  focus, keep the pane available, and report its session/pane IDs.
+  Follow the rex skill. Using Rex outside a managed pane is allowed,
+  even with `REX_SESSION` and `REX_BLOCK` unset.
 
-  Commands: `herdr pane list` to discover panes,
-  `herdr pane run <pane-id> "<command>"` to execute, and
-  `herdr pane read <pane-id> --source recent-unwrapped --lines 80`
-  to inspect output. Use `herdr --help` and command-group help for
-  session selection and pane creation syntax.
+  Use explicit session and block (pane) IDs. Reuse a suitable session
+  or create a dedicated one. Preserve my focus and report the IDs
+  of anything left open.
+
+  Commands:
+  - Discover: `rex ls --json`
+  - List panes: `rex block ls -s SESSION --json`
+  - New SSH session:
+    `rex new TASK-NAME --window HOST --keep-open --json -- ssh -tt HOST`
+    This does not switch the app to the new session.
+  - New SSH tab in an existing session:
+    `rex run -s SESSION --label HOST --focus=false --keep-open --json -- ssh -tt HOST`
+  - Read the current screen:
+    `rex capture -s SESSION -b BLOCK --trim --unwrap`
+  - After confirming a shell prompt, enter a command:
+    `rex send -s SESSION -b BLOCK 'COMMAND'`
+    then `rex send-key -s SESSION -b BLOCK enter`.
+
+  Clean up panes and sessions you created when finished. Retain
+  anything still needed for a running process or my inspection,
+  and explain why. Preserve pre-existing work. Exit SSH before
+  closing its pane with `rex block close -s SESSION BLOCK`; remove
+  a dedicated session with `rex kill SESSION` once all its contents
+  can be closed.
