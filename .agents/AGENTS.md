@@ -1,9 +1,12 @@
-* For URLs to services running on my computers, use
-  `http[s]://<hostname>.100vn.chrisboulton.net:<port>` with the hosting
-  computer's hostname, never localhost or a loopback address. Bind the
-  service to a LAN interface or `0.0.0.0` and verify the URL responds
-  before sharing it. I access these services across computers and
-  my phone.
+* When starting a web interface for me to open or review—such as a
+  dev server, preview, generated report, or dashboard—make it
+  accessible across my computers and phone. Bind it to a LAN
+  interface or `0.0.0.0`, and share a full URL using
+  `<hostname>.100vn.chrisboulton.net:<port>` with the hosting
+  computer's hostname. Verify that URL responds before sharing it.
+
+  For backend services, workers, and internal listeners, preserve
+  their normal network settings unless the task requires a change.
 
 * On `cb-mbp`, perform SSH work through a Herdr pane when it involves
   multiple commands, ongoing processes, or a session I may want to
