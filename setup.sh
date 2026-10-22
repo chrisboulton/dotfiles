@@ -39,7 +39,7 @@ if [ -f "/etc/os-release" ]; then
     fi
 fi
 
-mkdir -p "$target/.ssh" "$target/.config" "$target/.agents" "$target/.cache/zsh" "$target/.cargo"
+mkdir -p "$target/.ssh" "$target/.config" "$target/.agents" "$target/.cache/zsh" "$target/.cargo" "$target/.codex"
 
 stow -d $source -t $target --ignore=setup.sh -v .
 
