@@ -4,6 +4,9 @@ onboarding = false
 show_agent_labels_on_pane_borders = true
 
 agent_panel_sort = "spaces"
+status_indicators = "symbols"
+tab_bar_position = "top"
+hide_tab_bar_when_single_tab = true
 
 [[keys.command]]
 key = "prefix+shift+p"
@@ -47,5 +50,10 @@ name = "catppuccin"
 [ui.toast]
 delivery = "herdr"
 
+[ui.sidebar]
+
+[ui.sidebar.agents]
+rows = [["state_icon", "machine", "workspace", "tab"], ["agent"]]
+
 [experimental]
-pane_history = false
+pane_history = true
